@@ -1,6 +1,12 @@
 <section>
   <h4>{{ usersShow.user.username }}</h4>
   <h4>{{ usersShow.user.email }}</h4>
+  <h4>{{ usersShow.user.first_name }}</h4>
+  <h4>{{ usersShow.user.last_name }}</h4>
+  <h4>{{ usersShow.user.dob }}</h4>
+  <h4>{{ usersShow.user.user_location }}</h4>
+  <h4>{{ usersShow.user.user_bio }}</h4>
+  <h4>{{ usersShow.user.image }}</h4>
 
 
   <a ng-if= "main.isLoggedIn()" ui-sref="usersEdit({ id: usersShow.user.id })" class="button">Edit</a>

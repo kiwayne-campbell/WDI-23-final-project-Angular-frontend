@@ -1,0 +1,17 @@
+<section>
+  <h1>Festivals Show</h1>
+  <ul>
+    <li ng-repeat="festival in festivalsIndex.all">
+      <a ui-sref="festivalsShow({ id: festival.id })">
+      <h2>{{ festival.festival_name }}</h2>
+      <h4>{{ festival.cost }}</h4>
+      <h4>{{ festival.start }}</h4>
+      <h4>{{ festival.finish }}</h4>
+      <h4>{{ festival.minimum_age }}</h4>
+      <h4>{{ festival.location }}</h4>
+      <h4>{{ festival.details }}</h4>
+      <h4>{{ festival.image }}</h4>
+    </a>
+    </li>
+  </ul>
+</section>

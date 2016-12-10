@@ -1,0 +1,19 @@
+<section class="row">
+  <form ng-submit="commentsEdit.update()">
+    <div class="twelve columns">
+      <label>Comment Title</label>
+      <input type="text" name="title" placeholder="Enter new title" ng-model="commentsEdit.comment.title" class="u-full-width">
+    </div>
+    <div class="twelve columns">
+      <label>Comment Date</label>
+      <input type="date" name="comment_date" placeholder="Change date here" ng-model="commentsEdit.comment.comment_date" class="u-full-width">
+    </div>
+
+    <div class="twelve columns">
+      <label>Comment</label>
+      <input type="text" name="body" placeholder="Edit comment here" ng-model="commentsEdit.comment.body" class="u-full-width">
+    </div>
+
+    <button>Update</button>
+  </form>
+</section>

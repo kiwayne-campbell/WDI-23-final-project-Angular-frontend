@@ -1,0 +1,10 @@
+<section>
+  <h4>{{ commentsShow.comment.title }}</h4>
+  <h4>{{ commentsShow.comment.comment_date }}</h4>
+  <h4>{{ commentsShow.comment.body }}</h4>
+
+
+
+  <a ng-if= "main.isLoggedIn()" ui-sref="commentsEdit({ id: commentsShow.comment.id })" class="button">Edit</a>
+  <button ng-if= "main.isLoggedIn()" ng-click="commentsShow.delete()">Delete</button>
+</section>

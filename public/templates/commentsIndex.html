@@ -1,0 +1,14 @@
+<section>
+  <h1>Comments Page</h1>
+  <ul>
+    <li ng-repeat="comment in commentsIndex.all">
+      <a ui-sref="commentsShow({ id: comment.id })">
+      <h2>{{ comment.title }}</h2>
+      <h4>{{ comment.comment_date }}</h4>
+      <h4>{{ comment.user.username }}</h4>
+      <h4>{{ comment.body }}</h4>
+      <h4>{{ comment.festival.festival_name }}</h4>
+    </a>
+    </li>
+  </ul>
+</section>

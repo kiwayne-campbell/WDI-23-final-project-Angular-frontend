@@ -19,6 +19,36 @@ function Router($stateProvider, $urlRouterProvider) {
       templateUrl: '/templates/usersEdit.html',
       controller: 'UsersEditController as usersEdit'
     })
+    .state('festivalsIndex', {
+      url: '/festivals',
+      templateUrl: '/templates/festivalsIndex.html',
+      controller: 'FestivalsIndexController as festivalsIndex'
+    })
+    .state('festivalsShow', {
+      url: '/festivals/:id',
+      templateUrl: '/templates/festivalsShow.html',
+      controller: 'FestivalsShowController as festivalsShow'
+    })
+    .state('festivalsEdit', {
+      url: '/festivals/:id/edit',
+      templateUrl: '/templates/festivalsEdit.html',
+      controller: 'FestivalsEditController as festivalsEdit'
+    })
+    .state('commentsIndex', {
+      url: '/comments',
+      templateUrl: '/templates/commentsIndex.html',
+      controller: 'CommentsIndexController as commentsIndex'
+    })
+    .state('commentsShow', {
+      url: '/comments/:id',
+      templateUrl: '/templates/commentsShow.html',
+      controller: 'CommentsShowController as commentsShow'
+    })
+    .state('commentsEdit', {
+      url: '/comments/:id/edit',
+      templateUrl: '/templates/commentsEdit.html',
+      controller: 'CommentsEditController as commentsEdit'
+    })
     .state('register', {
       url: '/register',
       templateUrl: '/templates/register.html',

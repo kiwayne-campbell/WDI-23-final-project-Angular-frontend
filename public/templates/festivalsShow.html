@@ -1,0 +1,16 @@
+<section>
+  <h4>{{ festivalsShow.festival.festival_name }}</h4>
+  <h4>{{ festivalsShow.festival.cost }}</h4>
+  <h4>{{ festivalsShow.festival.start }}</h4>
+  <h4>{{ festivalsShow.festival.finish }}</h4>
+  <h4>{{ festivalsShow.festival.minimum_age }}</h4>
+  <h4>{{ festivalsShow.festival.location }}</h4>
+  <h4>{{ festivalsShow.festival.details }}</h4>
+  <h4>{{ festivalsShow.festival.image }}</h4>
+  <h4>{{ festivalsShow.comment.body }}</h4>
+  <button type="button" name="button">Add to Favourites</button>
+
+
+  <a ng-if= "main.isLoggedIn()" ui-sref="festivalsEdit({ id: festivalsShow.festival.id })" class="button">Edit</a>
+  <button ng-if= "main.isLoggedIn()" ng-click="festivalsShow.delete()">Delete</button>
+</section>
