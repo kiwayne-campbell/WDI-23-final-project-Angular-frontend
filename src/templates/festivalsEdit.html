@@ -1,0 +1,44 @@
+<section class="row">
+  <form ng-submit="festivalsEdit.update()">
+    <div class="twelve columns">
+      <label>Festival Name</label>
+      <input type="text" name="festival_name" placeholder="Enter new festival name" ng-model="festivalsEdit.festival.festival_name" class="u-full-width">
+    </div>
+    <div class="twelve columns">
+      <label>Cost</label>
+      <input type="number" name="cost" placeholder="Change Cost here" ng-model="festivalsEdit.festival.cost" class="u-full-width">
+    </div>
+
+    <div class="twelve columns">
+      <label>Minimum Age</label>
+      <input type="text" name="minimum_age" placeholder="Change age here" ng-model="FestivalsEdit.festival.minimum_age" class="u-full-width">
+    </div>
+
+    <div class="twelve columns">
+      <label>Location</label>
+      <input type="text" name="location" placeholder="Change Location here" ng-model="FestivalsEdit.festival.location" class="u-full-width">
+    </div>
+
+    <div class="twelve columns">
+      <label>Details</label>
+      <input type="text" name="details" placeholder="Change Details here" ng-model="FestivalsEdit.festival.details" class="u-full-width">
+    </div>
+
+    <div class="twelve columns">
+      <label>Start</label>
+      <input type="date" name="start" placeholder="Change start date here" ng-model="FestivalsEdit.festival.start" class="u-full-width">
+    </div>
+
+    <div class="twelve columns">
+      <label>Finish</label>
+      <input type="date" name="finish" placeholder="Change finsh date here" ng-model="FestivalsEdit.festival.finish" class="u-full-width">
+    </div>
+
+    <div class="twelve columns">
+      <label>Image</label>
+      <input type="text" name="image" placeholder="Change Email here" ng-model="FestivalsEdit.festival.image" class="u-full-width">
+    </div>
+
+    <button>Update</button>
+  </form>
+</section>

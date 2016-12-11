@@ -17,25 +17,25 @@ function FestivalsShowController(Festival, $state) {
 
   festivalsShow.festival = Festival.get($state.params);
 
+  function addComment() {
+    console.log('this works');
+    festivalsShow.festival.comments.push(festivalsShow.commentToAdd);
+    festivalsShow.titleToAdd = '';
+    festivalsShow.dateToAdd = '';
+    festivalsShow.bodyToAdd = '';
+    festivalsShow.festival.$update((res) => {
+      return res;
+    });
+  }
+
+  festivalsShow.add = addComment;
+
   function deleteFestival() {
     festivalsShow.festival.$remove(() => {
       $state.go('festivalsIndex');
     });
   }
 
-  // let id = $state.params.id;
-  // const FestivalsId = Festival._id;
-  //
-  // if (id === '') {
-  //   id = FestivalsId;
-  // }
-  //
-  // function isOwnProfile() {
-  //   console.log('is Festival?', isOwnProfile());
-  //   return FestivalsId === id ? true : false;
-  // }
-  //
-  // FestivalsShow.isOwnProfile = isOwnProfile;
   festivalsShow.delete = deleteFestival;
 }
 

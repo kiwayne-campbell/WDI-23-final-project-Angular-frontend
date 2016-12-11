@@ -39,6 +39,11 @@ function Router($stateProvider, $urlRouterProvider) {
       templateUrl: '/templates/commentsIndex.html',
       controller: 'CommentsIndexController as commentsIndex'
     })
+    .state('commentsNew', {
+      url: '/comments/new',
+      templateUrl: '/templates/commentsNew.html',
+      controller: 'CommentsNewController as commentsNew'
+    })
     .state('commentsShow', {
       url: '/comments/:id',
       templateUrl: '/templates/commentsShow.html',

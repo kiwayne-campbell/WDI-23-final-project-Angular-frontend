@@ -22,20 +22,7 @@ function UsersShowController(User, $state) {
       $state.go('usersIndex');
     });
   }
-
-  // let id = $state.params.id;
-  // const usersId = User._id;
-  //
-  // if (id === '') {
-  //   id = usersId;
-  // }
-  //
-  // function isOwnProfile() {
-  //   console.log('is user?', isOwnProfile());
-  //   return usersId === id ? true : false;
-  // }
-  //
-  // usersShow.isOwnProfile = isOwnProfile;
+  
   usersShow.delete = deleteUser;
 }
 
