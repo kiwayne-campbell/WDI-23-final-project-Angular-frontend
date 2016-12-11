@@ -11,8 +11,8 @@ function UsersIndexController(User) {
   usersIndex.all = User.query();
 }
 
-UsersShowController.$inject = ['User', '$state', '$auth'];
-function UsersShowController(User, $state, $auth) {
+UsersShowController.$inject = ['User', '$state', '$auth', 'Festival'];
+function UsersShowController(User, $state, $auth, Festival) {
   const usersShow = this;
 
   // const currentUserId = $auth.getPayload().id;

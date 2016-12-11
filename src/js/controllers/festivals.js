@@ -16,6 +16,7 @@ function FestivalsShowController(Festival, $state, Comment, User) {
   const festivalsShow = this;
 
   festivalsShow.festival = Festival.get($state.params);
+
   festivalsShow.comment = {
     festival_id: $state.params.id
   };
@@ -27,6 +28,19 @@ function FestivalsShowController(Festival, $state, Comment, User) {
   }
 
   festivalsShow.add = addComment;
+
+
+  function addFestival() {
+    festivalsShow.festival.UserFavouriteArray = [];
+
+    User.save(festivalsShow.festival, () => {
+      $state.reload();
+    });
+  }
+  // add main-message- added to favourites!
+
+  festivalsShow.addFestival = addFestival;
+
 
   function deleteFestival() {
     festivalsShow.festival.$remove(() => {

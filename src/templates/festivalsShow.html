@@ -10,11 +10,20 @@
   <h4>{{ festivalsShow.comment.body }}</h4>
 
 
-  <button type="button" name="button">Add to Favourites</button>
+  <button ng-click="festivalsShow.addFestival()">Favourite this festival</button>
 
 <h4>Post a Comment here </h4>
 
 <div class="comments">
+
+</ul>
+  <li ng-repeat="comment in festivalsShow.festival.comments">
+    <h5>{{ comment.title }}</h5>
+    <p>{{ comment.body }}</p>
+    <strong>{{ comment.user.username }}</strong>
+  </li>
+</ul>
+
   <form ng-submit="festivalsShow.add()">
     <input type="text" name="title" placeholder="Enter new title" ng-model="festivalsShow.comment.title" class="u-full-width">
 
@@ -22,14 +31,6 @@
 
     <button>Post comment</button>
   </form>
-
-  </ul>
-    <li ng-repeat="comment in festivalsShow.festival.comments">
-      <h5>{{ comment.title }}</h5>
-      <p>{{ comment.body }}</p>
-      <strong>{{ comment.user.username }}</strong>
-    </li>
-  </ul>
 
 </div>
 <br>
