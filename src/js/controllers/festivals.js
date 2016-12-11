@@ -11,20 +11,18 @@ function FestivalsIndexController(Festival) {
   festivalsIndex.all = Festival.query();
 }
 
-FestivalsShowController.$inject = ['Festival', '$state'];
-function FestivalsShowController(Festival, $state) {
+FestivalsShowController.$inject = ['Festival', '$state', 'Comment', 'User'];
+function FestivalsShowController(Festival, $state, Comment, User) {
   const festivalsShow = this;
 
   festivalsShow.festival = Festival.get($state.params);
+  festivalsShow.comment = {
+    festival_id: $state.params.id
+  };
 
   function addComment() {
-    console.log('this works');
-    festivalsShow.festival.comments.push(festivalsShow.commentToAdd);
-    festivalsShow.titleToAdd = '';
-    festivalsShow.dateToAdd = '';
-    festivalsShow.bodyToAdd = '';
-    festivalsShow.festival.$update((res) => {
-      return res;
+    Comment.save(festivalsShow.comment, () => {
+      $state.reload();
     });
   }
 

@@ -54,6 +54,11 @@ function Router($stateProvider, $urlRouterProvider) {
       templateUrl: '/templates/commentsEdit.html',
       controller: 'CommentsEditController as commentsEdit'
     })
+    .state('home', {
+      url: '/home',
+      templateUrl: '/templates/home.html',
+      controller: 'LoginController as login'
+    })
     .state('register', {
       url: '/register',
       templateUrl: '/templates/register.html',
@@ -66,5 +71,5 @@ function Router($stateProvider, $urlRouterProvider) {
     });
 
 
-  $urlRouterProvider.otherwise('/users');
+  $urlRouterProvider.otherwise('/festivals');
 }

@@ -1,6 +1,5 @@
 angular.module('finalProject')
   .controller('CommentsIndexController', CommentsIndexController)
-  .controller('CommentsNewController', CommentsNewController)
   .controller('CommentsShowController', CommentsShowController)
   .controller('CommentsEditController', CommentsEditController);
 
@@ -12,22 +11,22 @@ function CommentsIndexController(Comment) {
   commentsIndex.all = Comment.query();
 }
 
-CommentsNewController.$inject = ['Comment', '$state', '$auth'];
-function CommentsNewController(Comment, $state, $auth) {
-  const commentsNew = this;
-
-
-  function create() {
-    Comment.save($state.params, () => {
-      commentsNew.comment.userId = $auth.getPayload().id;
-      commentsNew.comment.festivalId = festivalsShow.festival.id;
-
-      $state.go('commentsShow', $state.params);
-    });
-  }
-
-  commentsNew.create = create;
-}
+// CommentsNewController.$inject = ['Comment', '$state', '$auth'];
+// function CommentsNewController(Comment, $state, $auth) {
+//   const commentsNew = this;
+//
+//
+//   function create() {
+//     Comment.save($state.params, () => {
+//       commentsNew.comment.userId = $auth.getPayload().id;
+//       commentsNew.comment.festivalId = festivalsShow.festival.id;
+//
+//       $state.go('commentsShow', $state.params);
+//     });
+//   }
+//
+//   commentsNew.create = create;
+// }
 
 
 CommentsShowController.$inject = ['Comment', '$state'];

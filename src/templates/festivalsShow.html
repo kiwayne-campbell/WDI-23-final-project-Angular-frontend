@@ -15,20 +15,22 @@
 <h4>Post a Comment here </h4>
 
 <div class="comments">
+  <form ng-submit="festivalsShow.add()">
+    <input type="text" name="title" placeholder="Enter new title" ng-model="festivalsShow.comment.title" class="u-full-width">
 
-    <input type="text" name="title" placeholder="Enter new title" ng-model="festivalsShow.titleToAdd" class="u-full-width">
+    <input type="text" name="body" placeholder="Enter comment here" ng-model="festivalsShow.comment.body" class="u-full-width">
 
-    <input type="date" name="comment_date" placeholder="Change date here" ng-model="festivalsShow.dateToAdd" class="u-full-width">
+    <button>Post comment</button>
+  </form>
 
-    <input type="text" name="body" placeholder="Enter comment here" ng-model="festivalsShow.bodyToAdd" class="u-full-width">
+  </ul>
+    <li ng-repeat="comment in festivalsShow.festival.comments">
+      <h5>{{ comment.title }}</h5>
+      <p>{{ comment.body }}</p>
+      <strong>{{ comment.user.username }}</strong>
+    </li>
+  </ul>
 
-  <button ng-click"festivalsShow.add()">Post comment</button>
-
-</ul><li ng-repeat="title in festivalsShow.commentArray">{{ title }}</li></ul>
-
-  </ul><li ng-repeat="comment_date in festivalsShow.commentArray">{{ comment_date }}</li></ul>
-
-</ul><li ng-repeat="body in festivalsShow.commentArray">{{ body }}</li></ul>
 </div>
 <br>
   <a ng-if= "main.isLoggedIn()" ui-sref="festivalsEdit({ id: festivalsShow.festival.id })" class="button">Edit</a>
