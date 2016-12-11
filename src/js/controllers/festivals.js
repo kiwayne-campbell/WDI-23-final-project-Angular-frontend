@@ -21,6 +21,10 @@ function FestivalsShowController(Festival, $state, Comment, User) {
     festival_id: $state.params.id
   };
 
+  festivalsShow.festivals = {
+    festival_id: $state.params.id
+  };
+
   function addComment() {
     Comment.save(festivalsShow.comment, () => {
       $state.reload();
@@ -31,9 +35,7 @@ function FestivalsShowController(Festival, $state, Comment, User) {
 
 
   function addFestival() {
-    festivalsShow.festival.UserFavouriteArray = [];
-
-    User.save(festivalsShow.festival, () => {
+    User.festivals.update(festivalsShow.festivals, () => {
       $state.reload();
     });
   }
