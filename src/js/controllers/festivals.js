@@ -11,8 +11,8 @@ function FestivalsIndexController(Festival) {
   festivalsIndex.all = Festival.query();
 }
 
-FestivalsShowController.$inject = ['Festival', '$state', 'Comment', 'User'];
-function FestivalsShowController(Festival, $state, Comment, User) {
+FestivalsShowController.$inject = ['Festival', '$state', 'Comment', 'User', '$auth'];
+function FestivalsShowController(Festival, $state, Comment, User, $auth) {
   const festivalsShow = this;
 
   festivalsShow.festival = Festival.get($state.params);
@@ -25,23 +25,26 @@ function FestivalsShowController(Festival, $state, Comment, User) {
     festival_id: $state.params.id
   };
 
+  console.log(festivalsShow.festivals);
+
   function addComment() {
     Comment.save(festivalsShow.comment, () => {
       $state.reload();
     });
   }
 
+
   festivalsShow.add = addComment;
 
 
-  function addFestival() {
-    User.festivals.update(festivalsShow.festivals, () => {
-      $state.reload();
+  function favorite() {
+    festivalsShow.festival.$favorite(() => {
+      $state.go('festivalsIndex');
     });
   }
   // add main-message- added to favourites!
 
-  festivalsShow.addFestival = addFestival;
+  festivalsShow.favorite = favorite;
 
 
   function deleteFestival() {

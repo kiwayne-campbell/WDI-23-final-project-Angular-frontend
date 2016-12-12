@@ -39,7 +39,7 @@ function UsersShowController(User, $state, $auth, Festival) {
   // usersShow.allowUserToEdit = allowUserToEdit;
 
   function isCurrentUser() {
-    return $auth.getPayload().id === $state.params.id;
+    return $auth.getPayload().id === parseFloat($state.params.id);
   }
 
 // get payload gives us current users id - user ID is IN TOKEN (BACKEND)

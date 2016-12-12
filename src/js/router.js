@@ -71,5 +71,5 @@ function Router($stateProvider, $urlRouterProvider) {
     });
 
 
-  $urlRouterProvider.otherwise('/festivals');
+  $urlRouterProvider.otherwise('/home');
 }

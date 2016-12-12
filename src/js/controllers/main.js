@@ -5,20 +5,24 @@ MainController.$inject = ['$auth', '$state', '$rootScope'];
 function MainController($auth, $state, $rootScope) {
   const main = this;
 
+  // $window.localStorage.setItem(currentUserId);
+
   main.isLoggedIn = $auth.isAuthenticated;
-  console.log('is auth?', main.isLoggedIn());
+  main.userId = $auth.getPayload().id;
 
   function logout() {
     $auth.logout()
       .then(() => {
-        $state.go('usersIndex');
+        localStorage.removeItem('currentUserId');
+        $state.go('home');
+
       });
   }
 
   main.logout = logout;
 
   main.message = null;
-  const protectedStates = ['usersEdit', 'usersNew'];
+  const protectedStates = ['usersEdit', 'usersNew', 'usersShow'];
 
   function secureState(e, toState) {
     main.message = null;

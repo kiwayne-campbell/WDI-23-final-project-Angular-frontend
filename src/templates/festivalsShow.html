@@ -6,10 +6,10 @@
   <h4>{{ festivalsShow.festival.minimum_age }}</h4>
   <h4>{{ festivalsShow.festival.location }}</h4>
   <h4>{{ festivalsShow.festival.details }}</h4>
-  <h4>{{ festivalsShow.festival.image }}</h4>
+  <img ng-src= "{{ festivalsShow.festival.image }}">
   <h4>{{ festivalsShow.comment.body }}</h4>
 
-<form ng-submit="festivalsShow.addFestival()">
+<form ng-submit="festivalsShow.favorite()">
   <button>Favourite this festival</button>
 </form>
 

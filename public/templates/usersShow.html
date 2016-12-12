@@ -12,6 +12,6 @@
 </ul>
 
 
-  <a ng-if= "isCurrentUser()" ui-sref="usersEdit({ id: usersShow.user.id })" class="button">Edit</a>
-  <button ng-if= "isCurrentUser()" ng-click="usersShow.delete()">Delete</button>
+  <button><a ng-if= "usersShow.isCurrentUser()" && "usersShow.isLoggedIn()" ui-sref="usersEdit({ id: usersShow.user.id })" class="button">Edit</a></button>
+  <button ng-if= "usersShow.isCurrentUser()" && "usersShow.isLoggedIn()" ng-click="usersShow.delete()">Delete</button>
 </section>

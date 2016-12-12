@@ -22,13 +22,14 @@ LoginController.$inject = ['$auth', '$state'];
 function LoginController($auth, $state) {
   const login = this;
 
-  // let userId = localStorage.setItem('userId');
-
   login.credentials = {};
 
   function submit() {
     $auth.login(login.credentials)
       .then(() => {
+        const currentUserId = $auth.getPayload().id;
+        console.log(currentUserId);
+        localStorage.setItem('currentUserId', currentUserId);
         $state.go('usersIndex');
       });
   }
