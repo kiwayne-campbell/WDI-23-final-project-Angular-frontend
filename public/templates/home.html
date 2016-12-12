@@ -1,13 +1,14 @@
-<section>
+
   <h4>Festiivo homepage</h4>
   <h4>Welcome to the niche festivals site!</h4>
 
-    <form class="" action="index.html">
-      <input type="text" value="" ng-model=query[queryBy] placeholder="search festivals">
-        <button ui-sref="festivalsIndex">Search Festivals</button>
-    </form>
+<form>
+  <input placeholder="Search" ng-model="q">
+  <button ui-sref="festivalsIndex({ q: q })">Search</button>
+</form>
+<button ui-sref="festivalsIndex">Show All festivals</button>
 
     <br>
 
-<input type="text" >
-  <button ui-sref="festivalsIndex">Go to Festivals</button>
+<!-- <input type="text" >
+  <button ui-sref="festivalsIndex">Go to Festivals</button> -->

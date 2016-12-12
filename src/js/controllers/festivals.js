@@ -4,15 +4,16 @@ angular.module('finalProject')
   .controller('FestivalsEditController', FestivalsEditController);
 
 
-FestivalsIndexController.$inject = ['Festival'];
-function FestivalsIndexController(Festival) {
+FestivalsIndexController.$inject = ['Festival', '$state'];
+function FestivalsIndexController(Festival, $state) {
   const festivalsIndex = this;
+  festivalsIndex.all = Festival.query({ q: $state.params.q });
 
-  festivalsIndex.all = Festival.query();
+  // festivalsIndex.all = Festival.query();
 }
 
-FestivalsShowController.$inject = ['Festival', '$state', 'Comment', 'User', '$auth'];
-function FestivalsShowController(Festival, $state, Comment, User, $auth) {
+FestivalsShowController.$inject = ['Festival', '$state', 'Comment'];
+function FestivalsShowController(Festival, $state, Comment) {
   const festivalsShow = this;
 
   festivalsShow.festival = Festival.get($state.params);

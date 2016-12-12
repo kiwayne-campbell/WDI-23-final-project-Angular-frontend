@@ -2,6 +2,7 @@
   <h1>Festivals Show</h1>
 
   <input type="text" value="" ng-model="searchBox">
+  <button ui-sref="festivalsIndex({ q: q })" >Show All festivals</button>
   <ul>
     <li ng-repeat="festival in festivalsIndex.all | filter:searchBox">
       <a ui-sref="festivalsShow({ id: festival.id })">

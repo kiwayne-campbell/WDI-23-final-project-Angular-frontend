@@ -20,7 +20,7 @@ function Router($stateProvider, $urlRouterProvider) {
       controller: 'UsersEditController as usersEdit'
     })
     .state('festivalsIndex', {
-      url: '/festivals',
+      url: '/festivals?q',
       templateUrl: '/templates/festivalsIndex.html',
       controller: 'FestivalsIndexController as festivalsIndex'
     })
