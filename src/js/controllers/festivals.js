@@ -22,12 +22,6 @@ function FestivalsShowController(Festival, $state, Comment) {
     festival_id: $state.params.id
   };
 
-  festivalsShow.festivals = {
-    festival_id: $state.params.id
-  };
-
-  console.log(festivalsShow.festivals);
-
   function addComment() {
     Comment.save(festivalsShow.comment, () => {
       $state.reload();

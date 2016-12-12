@@ -31,6 +31,7 @@
 </ul>
   <li ng-repeat="comment in festivalsShow.festival.comments">
     <h5>{{ comment.title }}</h5>
+    <h5>{{ comment.created_at }}</h5>
     <p>{{ comment.body }}</p>
     <strong>{{ comment.user.username }}</strong>
   </li>
@@ -45,7 +46,13 @@
   </form>
 
 </div>
+
+
 <br>
   <a ng-if= "main.isLoggedIn()" ui-sref="festivalsEdit({ id: festivalsShow.festival.id })" class="button">Edit</a>
   <button ng-if= "main.isLoggedIn()" ng-click="festivalsShow.delete()">Delete</button>
 </section>
+
+    <google-map center="{lat: 51.1, lng: -0.08 }"></google-map>
+
+</div>
