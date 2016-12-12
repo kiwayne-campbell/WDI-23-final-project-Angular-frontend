@@ -12,6 +12,16 @@
 <form ng-submit="festivalsShow.favorite()">
   <button>Favourite this festival</button>
 </form>
+<h4>Users who are interested in this festival </h4>
+
+<h4>{{ festivalsShow.festival.users }} </h4>
+
+</ul>
+  <li ng-repeat="user in festivalsShow.festival.users">
+    <h5>{{ user.username }}</h5>
+    <p>{{ user.image }}</p>
+  </li>
+</ul>
 
 
 <h4>Post a Comment here </h4>

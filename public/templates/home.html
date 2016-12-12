@@ -2,7 +2,12 @@
   <h4>Festiivo homepage</h4>
   <h4>Welcome to the niche festivals site!</h4>
 
-    <input type="text" value="" ng-model="searchBox" placeholder="search festivals">
+    <form class="" action="index.html">
+      <input type="text" value="" ng-model=query[queryBy] placeholder="search festivals">
+        <button ui-sref="festivalsIndex">Search Festivals</button>
+    </form>
+
     <br>
 
+<input type="text" >
   <button ui-sref="festivalsIndex">Go to Festivals</button>
