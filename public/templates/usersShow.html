@@ -8,8 +8,13 @@
   <li ng-repeat="festival in usersShow.user.festivals">
     <h5>{{ festival.cost }}</h5>
     <p>{{ festival.location }}</p>
+  <form ng-submit="usersShow.unfavorite()">
+    <button>Remove this festival from favorites!</button>
+  </form>
   </li>
 </ul>
+
+
 
 
   <button><a ng-if= "usersShow.isCurrentUser()" && "usersShow.isLoggedIn()" ui-sref="usersEdit({ id: usersShow.user.id })" class="button">Edit</a></button>

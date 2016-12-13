@@ -3,13 +3,12 @@ angular.module('finalProject')
   .controller('FestivalsShowController', FestivalsShowController)
   .controller('FestivalsEditController', FestivalsEditController);
 
-
-FestivalsIndexController.$inject = ['Festival', '$state'];
-function FestivalsIndexController(Festival, $state) {
+FestivalsIndexController.$inject = ['Festival', '$state', '$scope'];
+function FestivalsIndexController(Festival, $state, $scope) {
   const festivalsIndex = this;
   festivalsIndex.all = Festival.query({ q: $state.params.q });
+  festivalsIndex.featured = Festival.featured();
 
-  // festivalsIndex.all = Festival.query();
 }
 
 FestivalsShowController.$inject = ['Festival', '$state', 'Comment'];

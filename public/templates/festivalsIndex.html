@@ -13,8 +13,20 @@
       <h4>{{ festival.minimum_age }}</h4>
       <h4>{{ festival.location }}</h4>
       <h4>{{ festival.details }}</h4>
-      <h4>{{ festival.image }}</h4>
+      <img ng-src="{{ festival.image }}">
     </a>
+    </li>
+  </ul>
+</section>
+
+<section>
+  <h2>Please see other recommended festivals</h2>
+  <ul>
+    <li ng-repeat="festival in festivalsIndex.featured">
+      <a ui-sref="festivalsShow({ id: festival.id })">
+        <h2>{{ festival.festival_name }}</h2>
+        <img ng-src="{{ festival.image }}">
+      </a>
     </li>
   </ul>
 </section>
