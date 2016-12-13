@@ -55,4 +55,4 @@
   <button ng-if= "main.isLoggedIn()" ng-click="festivalsShow.delete()">Delete</button>
 </section>
 
-    <google-map center="{lat: 51.1, lng: -0.08 }"></google-map>
+    <google-map center="{lat: festivalsShow.festival.latitude, lng: festivalsShow.festival.longitude }" ng-if="festivalsShow.festival.latitude"></google-map>

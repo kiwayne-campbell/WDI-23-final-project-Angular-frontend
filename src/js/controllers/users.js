@@ -11,8 +11,8 @@ function UsersIndexController(User) {
   usersIndex.all = User.query();
 }
 
-UsersShowController.$inject = ['User', '$state', '$auth', 'Festival'];
-function UsersShowController(User, $state, $auth, Festival) {
+UsersShowController.$inject = ['User', '$state', '$auth', 'Festival', '$http'];
+function UsersShowController(User, $state, $auth, Festival, $http) {
   const usersShow = this;
 
   // const currentUserId = $auth.getPayload().id;
@@ -56,6 +56,18 @@ function UsersShowController(User, $state, $auth, Festival) {
   }
 
   usersShow.delete = deleteUser;
+
+  function unfavorite(festival) {
+    $http({
+      method: 'POST',
+      url: `http://localhost:3000/api/festivals/${festival.id}/unfavorite`
+    }).then(function(){
+      usersShow.user.festivals.splice(usersShow.user.festivals.indexOf(festival), 1);
+    });
+  }
+
+  usersShow.unfavorite = unfavorite;
+
 
 }
 

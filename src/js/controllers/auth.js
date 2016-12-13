@@ -27,9 +27,9 @@ function LoginController($auth, $state) {
   function submit() {
     $auth.login(login.credentials)
       .then(() => {
-        const currentUserId = $auth.getPayload().id;
-        console.log(currentUserId);
-        localStorage.setItem('currentUserId', currentUserId);
+        // const currentUserId = $auth.getPayload().id;
+        // console.log(currentUserId);
+        // localStorage.setItem('currentUserId', currentUserId);
         $state.go('usersIndex');
       });
   }

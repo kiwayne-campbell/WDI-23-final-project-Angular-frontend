@@ -9,9 +9,7 @@
     <h5>{{ festival.cost }}</h5>
     <p>{{ festival.location }}</p>
     <img ng-src ="{{ festival.image}}">
-  <form ng-submit="usersShow.unfavorite()">
-    <button>Remove this festival from favorites!</button>
-  </form>
+    <button ng-click="usersShow.unfavorite(festival)">Remove this festival from favorites!</button>
   </li>
 </ul>
 

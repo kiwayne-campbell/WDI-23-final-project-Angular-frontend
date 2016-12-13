@@ -8,12 +8,14 @@ function MainController($auth, $state, $rootScope) {
   // $window.localStorage.setItem(currentUserId);
 
   main.isLoggedIn = $auth.isAuthenticated;
+  // main.userId = $auth.getPayload().id;
   main.userId = $auth.getPayload().id;
+  console.log(main.userId);
 
   function logout() {
     $auth.logout()
       .then(() => {
-        localStorage.removeItem('currentUserId');
+        // localStorage.removeItem('currentUserId');
         $state.go('home');
 
       });
