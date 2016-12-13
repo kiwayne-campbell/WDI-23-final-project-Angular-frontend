@@ -10,5 +10,12 @@
 
     <br>
 
-<!-- <input type="text" >
-  <button ui-sref="festivalsIndex">Go to Festivals</button> -->
+      <h2>Please see other recommended festivals</h2>
+      <ul>
+        <li ng-repeat="festival in festivalsIndex.featured">
+          <a ui-sref="festivalsShow({ id: festival.id })">
+            <h2>{{ festival.festival_name }}</h2>
+            <img ng-src="{{ festival.image }}">
+          </a>
+        </li>
+      </ul>

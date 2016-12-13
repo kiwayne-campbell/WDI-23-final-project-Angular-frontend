@@ -57,7 +57,7 @@ function Router($stateProvider, $urlRouterProvider) {
     .state('home', {
       url: '/home',
       templateUrl: '/templates/home.html',
-      controller: 'LoginController as login'
+      controller: 'FestivalsIndexController as festivalsIndex'
     })
     .state('register', {
       url: '/register',

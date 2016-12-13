@@ -18,8 +18,10 @@
 
 </ul>
   <li ng-repeat="user in festivalsShow.festival.users">
+    <a ui-sref="usersShow({ id: user.id })">
     <h5>{{ user.username }}</h5>
     <p>{{ user.image }}</p>
+  </a>
   </li>
 </ul>
 

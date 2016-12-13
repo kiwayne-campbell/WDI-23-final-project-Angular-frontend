@@ -57,14 +57,6 @@ function UsersShowController(User, $state, $auth, Festival) {
 
   usersShow.delete = deleteUser;
 
-
-  // function unfavorite() {
-  //   usersShow.user.$unfavorite(() => {
-  //     $state.go('usersShow');
-  //   });
-  // }
-  //
-  // usersShow.unfavorite = unfavorite;
 }
 
 
