@@ -13,13 +13,13 @@ body{
 }
 
 img {
-  height: 200px;
+  // height: 200px;
   width: 200px;
 }
 
 a {
   text-decoration: none;
-  margin-right: 10px;
+  margin-right: 40px;
   color: grey;
 }
 
@@ -116,9 +116,6 @@ button {
 
 
 
-
-
-
 // profile page styling
 
 .profile-box {
@@ -148,10 +145,10 @@ button {
   display: inline-block;
   margin-right:20px;
   margin-bottom:20px;
-  line-height: 10px;
+  line-height: 3px;
   // border: solid 1px black;
-  // width: 300px;
-  // height: 300px;
+  width: 200px;
+  height: 200px;
 }
 
 .festival-display-results-bar {
@@ -159,8 +156,17 @@ button {
   color: white;
   text-align: center;
   width: 100%;
-  height: inherit;
+  height: 30px;
+  border-radius: 20px;
+  margin-bottom: 20px;
 }
+
+.festival-display-page-video {
+  width: 300px;
+  height: 600px;
+  position: fixed;
+}
+
 
 .no-span {
     display: table;
@@ -177,13 +183,12 @@ button {
     &:after { left: 1.5%; }
 }
 
-// .left {
-//   float: left;
-// }
-//
-// .right {
-//   float: right;
-// }
-// .festival-display-list {
-//   display: inline-block;;
-// }
+
+// festivals show profile-image
+
+.festivals-showpage-image-box{
+  height: 500px;
+}
+.festivals-showpage-image {
+  width: 100%!important;
+}

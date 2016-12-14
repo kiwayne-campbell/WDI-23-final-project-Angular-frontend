@@ -1,5 +1,5 @@
 
-<h1 class="no-span" style="text-align: center; font-size:50px;">Festivals Results</h1>
+<h1 class="no-span" style="text-align: center; font-size:50px; margin-top:60px;">Festivals Results</h1>
 
 <!-- <div class="col-md-2">&nbsp</div> -->
 
@@ -12,7 +12,7 @@
                         <div class="col-md-10">
                           <div class="form-group">
                             <label class="sr-only" for="location">Location</label>
-                            <input type="email" class="form-control" id="location" placeholder="Where ?" ng-model="q">
+                            <input type="text" class="form-control" id="location" placeholder="Where ?" ng-model="q">
                           </div>
                         </div>
 
@@ -38,10 +38,11 @@
 
                 <div class="festival-display-page list panel space-4">
                   <h2>{{ festival.festival_name }}</h2>
-                  <h4><strong>Location:</strong> {{ festival.location }}</h4>
+                  <p style="font-size:20px;"><strong>Location:</strong> {{ festival.location }}</p>
                   <p><strong>start:</strong> {{ festival.start }}</p>
                   <p><strong>Finish:</strong> {{ festival.finish }}</p>
-                  <p><strong>Cost:</strong> {{ festival.cost }}</p>
+                  <p><strong>Cost:</strong> £{{ festival.cost }}</p>
+                  <p><strong>Minimum Age:</strong> {{ festival.minimum_age }}</p>
                 </div>
             </a>
             <hr>
@@ -53,7 +54,17 @@
     </div>
 
 
-  <div class="col-md-4">&nbsp</div>
+  <div class="col-md-4">
+
+    <div class="festival-display-page-video">
+
+      <iframe width="400" height="700" src="https://www.youtube.com/embed/uBWGgcvIpKw" volume="0" frameborder="0" allowfullscreen ></iframe>
+
+    </div>
+
+
+
+  </div>
 
 
 

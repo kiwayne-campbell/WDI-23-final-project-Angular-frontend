@@ -1,10 +1,11 @@
-<section>
+
+<div class="festivals-showpage-image-box">
+    <img class="festivals-showpage-image" ng-src= "{{ festivalsShow.festival.image }}">
+</div>
 
   <h1 style="text-align: center;">{{ festivalsShow.festival.festival_name }}</h1>
 
-  <div ng-style="{'background-image':'{{festivalsShow.festival.image}}'}" class="festival-show-image">
-    <img ng-src= "{{ festivalsShow.festival.image }}">
-  </div>
+
 
   <h4>{{ festivalsShow.festival.cost }}</h4>
   <h4>{{ festivalsShow.festival.start }}</h4>
