@@ -10,17 +10,18 @@
     <script src="/js/app.js" charset="utf-8"></script>
   </head>
   <body ng-controller="MainController as main">
-    <h1>Festiivo!</h1>
-      <nav>
-        <ul>
-          <li ng-if="main.isLoggedIn()"><a ui-sref="usersShow({ id: main.userId })" ui-sref-active="active">Profile</a></li>
-          <li><a ui-sref="home" ui-sref-active="active">Home</a></li>
-          <li><a ui-sref="festivalsIndex" ui-sref-active="active">Festivals</a></li>
-          <li><a ui-sref="commentsIndex" ui-sref-active="active">Comments</a></li>
-          <li ng-if="!main.isLoggedIn()"><a ui-sref="register" ui-sref-active="active">Register</a></li>
-          <li ng-if="!main.isLoggedIn()"><a ui-sref="login" ui-sref-active="active">Login</a></li>
-          <li ng-if="main.isLoggedIn()"><a href="#" ng-click="main.logout()">Logout</a></li>
-        </ul>
+    <h1></h1>
+        <nav class="navbar navbar-light bg-faded">
+          FESTIIVO
+          <span class="navbar-text float-xs-right text-muted">
+          <a ng-if="main.isLoggedIn()" ui-sref="usersShow({ id: main.userId })" ui-sref-active="active">Profile</a>
+          <a ui-sref="home" ui-sref-active="active">Home</a>
+          <a ui-sref="festivalsIndex" ui-sref-active="active">Festivals</a>
+          <a ui-sref="commentsIndex" ui-sref-active="active">Comments</a>
+          <a ng-if="!main.isLoggedIn()" ui-sref="register" ui-sref-active="active">Register</a>
+          <a ng-if="!main.isLoggedIn()" ui-sref="login" ui-sref-active="active">Login</a>
+          <a ng-if="main.isLoggedIn()" href="#" ng-click="main.logout()">Logout</a>
+        </span>
       </nav>
     <main ui-view></main>
   </body>

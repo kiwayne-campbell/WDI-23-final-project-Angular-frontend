@@ -1,9 +1,60 @@
-.google-map {
+@import 'vendor';
+
+body{
+  background-color: green;
+  color: white;
+}
+
+
+.google-maps {
   width: 400px;
   height: 400px;
 }
 
 img {
   height: 300px;
-  width: 300px;  
+  width: 300px;
+}
+
+a {
+  text-decoration: none;
+  margin-right: 10px;
+  color: grey;
+}
+
+a:hover {
+  text-decoration: none;
+  color: grey;
+}
+
+.navbar {
+  background-color: white;
+}
+
+.navbar-text {
+  font-size: 20px;
+  color: white;
+  margin-right: 20px;
+}
+
+li {
+  list-style-type: none;
+}
+
+
+.home-list{
+  display: inline-block;
+}
+
+.home-title {
+  text-align: center;
+}
+
+.home-searchBar {
+  text-align: center;
+}
+
+.home-recommend {
+  text-align: center;
+  display: inline;
 }

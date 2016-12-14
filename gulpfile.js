@@ -69,6 +69,7 @@ gulp.task('styles', () => {
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('public/css'));
 });
+
 gulp.task('styles:vendor', () => {
   return gulp.src('src/scss/vendor.scss')
     .pipe(plumber())
@@ -102,7 +103,6 @@ gulp.task('watch', () => {
   livereload.listen();
   gulp.watch('src/**/*.html', ['html']);
   gulp.watch('src/**/*.js', ['scripts']);
-  gulp.watch('src/**/*.scss', ['sass']);
   gulp.watch('src/**/*.scss', ['styles', 'styles:vendor']);
 });
 

@@ -1,21 +1,24 @@
-
+<div class="col-md-12 home-title">
   <h4>Festiivo homepage</h4>
   <h4>Welcome to the niche festivals site!</h4>
+</div>
 
+<div class="col-md-12 home-searchBar">
 <form>
   <input placeholder="Search" ng-model="q">
   <button ui-sref="festivalsIndex({ q: q })">Search</button>
 </form>
 <button ui-sref="festivalsIndex">Show All festivals</button>
+</div>
 
-    <br>
-
+<div class="col-md-12 home-recommend">
       <h2>Please see other recommended festivals</h2>
       <ul>
-        <li ng-repeat="festival in festivalsIndex.featured">
+        <li class="home-list" ng-repeat="festival in festivalsIndex.featured">
           <a ui-sref="festivalsShow({ id: festival.id })">
             <h2>{{ festival.festival_name }}</h2>
             <img ng-src="{{ festival.image }}">
           </a>
         </li>
       </ul>
+</div>
