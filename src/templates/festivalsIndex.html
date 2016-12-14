@@ -1,42 +1,48 @@
 
+<h1 class="no-span" style="text-align: center; font-size:50px;">Festivals Results</h1>
 
-    <h1 style="text-align: center;">Festivals Show</h1>
+<div class="col-md-2">&nbsp</div>
 
-    <div class="col-md-12 input-group stylish-input-group">
-    <form>
-      <input class="form-control" placeholder="Search" ng-model="q">
-      <span class="input-group-addon">
-      <button ui-sref="festivalsIndex({ q: q })">Search again</button>
-      </span>
-    </form>
+    <div class="col-md-8">
+
+      <div class="">
+      <form>
+        <input class="form-control" placeholder="Search" ng-model="q">
+        <span class="input-group-addon">
+        <button class=btn btn-large ui-sref="festivalsIndex({ q: q })">Search again</button>
+        </span>
+      </form>
+      </div>
+
+      <div class="festival-display-results-bar">
+        <p>Please see results below</p>
+      </div>
+
+      <div class="festivals-display-box">
+        <ul>
+          <li class="" ng-repeat="festival in festivalsIndex.all | filter:searchBox">
+            <a ui-sref="festivalsShow({ id: festival.id })">
+                <div class="festival-display-page panel space-4">
+                  <img ng-src="{{ festival.image }}">
+                  </div>
+
+
+                <span class= "right">
+                <div class="festival-display-page list panel space-4">
+                  <h2>{{ festival.festival_name }}</h2>
+                  <p><strong>Location:</strong> {{ festival.location }}</p>
+                  <p><strong>start:</strong> {{ festival.start }}</p>
+                  <p><strong>Finish:</strong> {{ festival.finish }}</p>
+                </div>
+                  </span>
+            </a>
+            <hr>
+          </li>
+        </ul>
+
+      </div>
+
     </div>
 
-    <div class="festival-display-results-bar">
-      <p>Please see results below</p>
-    </div>
 
-
-  <div class="col-md-12">
-    <div class="festivals-display-box">
-      <ul>
-        <li class="" ng-repeat="festival in festivalsIndex.all | filter:searchBox">
-          <a ui-sref="festivalsShow({ id: festival.id })">
-              <div class="festival-display-page panel space-4">
-                <img ng-src="{{ festival.image }}">
-              </div>
-              <div class="festival-display-page list panel space-4">
-                <h2>{{ festival.festival_name }}</h2>
-                <h4>Location: {{ festival.location }}</h4>
-                <h4>start: {{ festival.start }}</h4>
-                <h4>Finish: {{ festival.finish }}</h4>
-
-              </div>
-          </a>
-          <hr>
-        </li>
-      </ul>
-
-    </div>
-
-
-  </div>
+  <div class="col-md-2">&nbsp</div>

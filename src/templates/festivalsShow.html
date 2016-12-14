@@ -1,20 +1,27 @@
 <section>
-  <h4>{{ festivalsShow.festival.festival_name }}</h4>
+
+  <h1 style="text-align: center;">{{ festivalsShow.festival.festival_name }}</h1>
+
+  <div ng-style="{'background-image':'{{festivalsShow.festival.image}}'}" class="festival-show-image">
+    <img ng-src= "{{ festivalsShow.festival.image }}">
+  </div>
+
   <h4>{{ festivalsShow.festival.cost }}</h4>
   <h4>{{ festivalsShow.festival.start }}</h4>
   <h4>{{ festivalsShow.festival.finish }}</h4>
   <h4>{{ festivalsShow.festival.minimum_age }}</h4>
   <h4>{{ festivalsShow.festival.location }}</h4>
   <h4>{{ festivalsShow.festival.details }}</h4>
-  <img ng-src= "{{ festivalsShow.festival.image }}">
+
   <h4>{{ festivalsShow.comment.body }}</h4>
 
 <form ng-submit="festivalsShow.favorite()">
-  <button>Favourite this festival</button>
+  <button class=btn btn-primary btn-large>Favourite this festival</button>
 </form>
-<h4>Users who are interested in this festival </h4>
 
-<h4>{{ festivalsShow.festival.users }} </h4>
+<hr>
+
+<h4>Members who are interested in this festival </h4>
 
 </ul>
   <li ng-repeat="user in festivalsShow.festival.users">
@@ -25,34 +32,40 @@
   </li>
 </ul>
 
+<hr>
+
 
 <h4>Post a Comment here </h4>
 
+<form ng-submit="festivalsShow.add()">
+  <input type="text" name="title" placeholder="Enter new title" ng-model="festivalsShow.comment.title" class="u-full-width">
+
+  <input type="text" name="body" placeholder="Enter comment here" ng-model="festivalsShow.comment.body" class="u-full-width">
+
+  <button class=btn btn-primary btn-large>Post comment</button>
+</form>
+
+<hr>
+
 <div class="comments">
+
+  <h4>Comments </h4>
 
 </ul>
   <li ng-repeat="comment in festivalsShow.festival.comments">
     <h5>{{ comment.title }}</h5>
     <h5>{{ comment.created_at }}</h5>
     <p>{{ comment.body }}</p>
-    <strong>{{ comment.user.username }}</strong>
+    <strong>{{ comment.users.username }}</strong>
   </li>
 </ul>
-
-  <form ng-submit="festivalsShow.add()">
-    <input type="text" name="title" placeholder="Enter new title" ng-model="festivalsShow.comment.title" class="u-full-width">
-
-    <input type="text" name="body" placeholder="Enter comment here" ng-model="festivalsShow.comment.body" class="u-full-width">
-
-    <button>Post comment</button>
-  </form>
 
 </div>
 
 
 <br>
-  <a ng-if= "main.isLoggedIn()" ui-sref="festivalsEdit({ id: festivalsShow.festival.id })" class="button">Edit</a>
-  <button ng-if= "main.isLoggedIn()" ng-click="festivalsShow.delete()">Delete</button>
+  <button class=btn btn-primary btn-large ng-if= "main.isLoggedIn()" ui-sref="festivalsEdit({ id: festivalsShow.festival.id })" class="button">Edit</button>
+  <button class=btn btn-primary btn-large ng-if= "main.isLoggedIn()" ng-click="festivalsShow.delete()">Delete</button>
 </section>
 
     <google-map center="{lat: festivalsShow.festival.latitude, lng: festivalsShow.festival.longitude }" ng-if="festivalsShow.festival.latitude"></google-map>

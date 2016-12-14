@@ -1,22 +1,24 @@
-<div class="col-md-12 home-title">
+
+<div class="col-md-1">&nbsp</div>
+
+<div class="col-md-10">
+
+<div class="home-title">
   <h1><span class="home-festiivo">FESTIIVO</span> Welcome to the niche festivals site!</h1>
 </div>
 
-<div class="col-md-12 input-group stylish-input-group">
 <!-- <div class="col-md-12 home-searchBar"> -->
+<div class="input-group">
 <form>
   <input class="form-control" placeholder="Search" ng-model="q">
   <span class="input-group-addon">
-  <button ui-sref="festivalsIndex({ q: q })">Search</button>
+  <button class=btn btn-large ui-sref="festivalsIndex({ q: q })">Search</button>
   </span>
 </form>
-<span class="input-group-addon">
-  <button ui-sref="festivalsIndex">Show All festivals</button>
-  </span>
 </div>
 
-<div class="col-md-12 home-recommend">
-      <h2>Please see other recommended festivals</h2>
+<div class="home-recommend">
+      <h2>Recommended festivals</h2>
       <ul>
         <li class="home-list" ng-repeat="festival in festivalsIndex.featured">
           <a ui-sref="festivalsShow({ id: festival.id })">
@@ -27,3 +29,6 @@
         </li>
       </ul>
 </div>
+</div>
+
+<div class="col-md-1">&nbsp</div>

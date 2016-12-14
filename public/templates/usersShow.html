@@ -8,19 +8,19 @@
       <div class="panel-body">
         <h4>Username: {{ usersShow.user.username }}</h4>
         <h4>Email: {{ usersShow.user.email }}</h4>
-        <button><a ng-if= "usersShow.isCurrentUser()" && "usersShow.isLoggedIn()"  ui-sref="usersEdit({ id: usersShow.user.id })" class="button">Edit</a></button>
-        <button ng-if= "usersShow.isCurrentUser()" && "usersShow.isLoggedIn()"   ng-click="usersShow.delete()">Delete</button>
+        <button class=btn btn-primary btn-large><a ng-if= "usersShow.isCurrentUser()" && "usersShow.isLoggedIn()"  ui-sref="usersEdit({ id: usersShow.user.id })" class="button">Edit</a></button>
+        <button class=btn btn-primary btn-large ng-if= "usersShow.isCurrentUser()" && "usersShow.isLoggedIn()"   ng-click="usersShow.delete()">Delete</button>
       </div>
     </div>
   </div>
 
   <div class="col-md-9">
-
+    <h4>Bio</h4>
     <div class="bio panel space-4">
       <div class="profile-bio">
       <p>{{ usersShow.user.bio }}</p><br>
     </div>
-    <button><a ng-if= "usersShow.isCurrentUser()" && "usersShow.isLoggedIn()"  ui-sref="usersEdit({ id: usersShow.user.id })" class="button">Edit</a></button>
+    <button class=btn btn-primary btn-large><a ng-if= "usersShow.isCurrentUser()" && "usersShow.isLoggedIn()"  ui-sref="usersEdit({ id: usersShow.user.id })" class="button">Edit</a></button>
   </div>
   <hr>
     <div class="panel space-4">
@@ -34,7 +34,7 @@
             <p>{{ festival.location }}</p>
             <p>{{ festival.cost }}</p>
           </a><br><br>
-          <button ng-click="usersShow.unfavorite(festival)">Remove this festival from  favorites!</button>
+          <button class=btn btn-primary btn-large ng-click="usersShow.unfavorite(festival)">Remove this festival from  favorites!</button>
         </li>
       </ul>
     </div>
@@ -43,6 +43,7 @@
       <h4>Your Comments on festivals</h4>
       <ul>
         <li ng-repeat="comment in usersShow.user.comments">
+          <!-- <p> {{ comment.festival_ids.festival_name }} -->
           <p>Title: {{ comment.title }}</p>
           <p>{{ comment.body }}</p>
         </li>
