@@ -1,18 +1,28 @@
 
 <h1 class="no-span" style="text-align: center; font-size:50px;">Festivals Results</h1>
 
-<div class="col-md-2">&nbsp</div>
+<!-- <div class="col-md-2">&nbsp</div> -->
 
     <div class="col-md-8">
 
-      <div class="">
-      <form>
-        <input class="form-control" placeholder="Search" ng-model="q">
-        <span class="input-group-addon">
-        <button class=btn btn-large ui-sref="festivalsIndex({ q: q })">Search again</button>
-        </span>
-      </form>
-      </div>
+
+                <div class="form-section">
+                  <div class="row">
+                      <form role="form">
+                        <div class="col-md-10">
+                          <div class="form-group">
+                            <label class="sr-only" for="location">Location</label>
+                            <input type="email" class="form-control" id="location" placeholder="Where ?" ng-model="q">
+                          </div>
+                        </div>
+
+                        <div class="col-md-2">
+                          <button class=btn btn-large ui-sref="festivalsIndex({ q: q })">Search</button>
+                        </div>
+                      </form>
+                  </div>
+                </div>
+
 
       <div class="festival-display-results-bar">
         <p>Please see results below</p>
@@ -26,15 +36,13 @@
                   <img ng-src="{{ festival.image }}">
                   </div>
 
-
-                <span class= "right">
                 <div class="festival-display-page list panel space-4">
                   <h2>{{ festival.festival_name }}</h2>
-                  <p><strong>Location:</strong> {{ festival.location }}</p>
+                  <h4><strong>Location:</strong> {{ festival.location }}</h4>
                   <p><strong>start:</strong> {{ festival.start }}</p>
                   <p><strong>Finish:</strong> {{ festival.finish }}</p>
+                  <p><strong>Cost:</strong> {{ festival.cost }}</p>
                 </div>
-                  </span>
             </a>
             <hr>
           </li>
@@ -45,4 +53,16 @@
     </div>
 
 
-  <div class="col-md-2">&nbsp</div>
+  <div class="col-md-4">&nbsp</div>
+
+
+
+<!--
+  <div class="">
+  <form>
+    <input class="form-control" placeholder="Search" ng-model="q">
+    <span class="input-group-addon">
+    <button class=btn btn-large ui-sref="festivalsIndex({ q: q })">Search again</button>
+    </span>
+  </form>
+  </div> -->
