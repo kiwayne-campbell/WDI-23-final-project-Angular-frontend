@@ -69,6 +69,16 @@ gulp.task('styles', () => {
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('public/css'));
 });
+gulp.task('styles:vendor', () => {
+  return gulp.src('src/scss/vendor.scss')
+    .pipe(plumber())
+    .pipe(sass())
+    .pipe(sourcemaps.init())
+    .pipe(plumber())
+    .pipe(cleanCSS({ compatibility: 'ie8' }))
+    .pipe(sourcemaps.write('./'))
+    .pipe(gulp.dest('public/css'));
+});
 
 // html
 gulp.task('html', () => {
@@ -93,6 +103,7 @@ gulp.task('watch', () => {
   gulp.watch('src/**/*.html', ['html']);
   gulp.watch('src/**/*.js', ['scripts']);
   gulp.watch('src/**/*.scss', ['sass']);
+  gulp.watch('src/**/*.scss', ['styles', 'styles:vendor']);
 });
 
-gulp.task('default', sequence('clean', ['bower:js', 'bower:css'], ['scripts', 'styles', 'html'], 'watch', 'nodemon'));
+gulp.task('default', sequence('clean', ['bower:js', 'bower:css'], ['scripts', 'styles', 'styles:vendor', 'html'], 'watch', 'nodemon'));
