@@ -2,12 +2,12 @@
 
   <div class="col-md-3">
     <div class="panel space-4">
-      <div class="profile-image">
-        <h4>{{ usersShow.user.image }}</h4>
+      <div class="profile-box">
+        <img class="profile-image" ng-src="{{ usersShow.user.image }}" height="100px" width="100px">
       </div>
       <div class="panel-body">
-        <h4>{{ usersShow.user.username }}</h4>
-        <h4>{{ usersShow.user.email }}</h4>
+        <h4>Username: {{ usersShow.user.username }}</h4>
+        <h4>Email: {{ usersShow.user.email }}</h4>
         <button><a ng-if= "usersShow.isCurrentUser()" && "usersShow.isLoggedIn()"  ui-sref="usersEdit({ id: usersShow.user.id })" class="button">Edit</a></button>
         <button ng-if= "usersShow.isCurrentUser()" && "usersShow.isLoggedIn()"   ng-click="usersShow.delete()">Delete</button>
       </div>
@@ -16,27 +16,37 @@
 
   <div class="col-md-9">
 
-    <div class="panel space-4">
-      <p>{{ festival.bio }}</p>
-      <button><a ng-if= "usersShow.isCurrentUser()" && "usersShow.isLoggedIn()"  ui-sref="usersEdit({ id: usersShow.user.id })" class="button">Edit</a></button>
+    <div class="bio panel space-4">
+      <div class="profile-bio">
+      <p>{{ usersShow.user.bio }}</p><br>
     </div>
-
+    <button><a ng-if= "usersShow.isCurrentUser()" && "usersShow.isLoggedIn()"  ui-sref="usersEdit({ id: usersShow.user.id })" class="button">Edit</a></button>
+  </div>
+  <hr>
     <div class="panel space-4">
-      </ul>
+
+      <h4>Your Favourite Events</h4>
+      <ul>
         <li ng-repeat="festival in usersShow.user.festivals">
           <a ui-sref="festivalsShow({ id: festival.id })">
+            <img ng-src ="{{ festival.image}}">
             <p>{{ festival.festival_name }}</p>
             <p>{{ festival.location }}</p>
             <p>{{ festival.cost }}</p>
-            <img ng-src ="{{ festival.image}}">
-          </a>
+          </a><br><br>
           <button ng-click="usersShow.unfavorite(festival)">Remove this festival from  favorites!</button>
         </li>
       </ul>
     </div>
-
+    <hr>
     <div class="panel space-4">
-      <p>{{ festival.comment }}</p>
+      <h4>Your Comments on festivals</h4>
+      <ul>
+        <li ng-repeat="comment in usersShow.user.comments">
+          <p>Title: {{ comment.title }}</p>
+          <p>{{ comment.body }}</p>
+        </li>
+      </ul>
     </div>
 
   </div>

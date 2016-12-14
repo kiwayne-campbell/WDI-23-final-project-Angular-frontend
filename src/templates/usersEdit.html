@@ -1,4 +1,4 @@
-<section class="row">
+<div class="col-md-12">
   <form ng-submit="usersEdit.update()">
     <div class="twelve columns">
       <label>Username</label>
@@ -8,7 +8,23 @@
       <label>Email</label>
       <input type="text" name="email" placeholder="Change Email here" ng-model="usersEdit.user.email" class="u-full-width">
     </div>
+    <div class="twelve columns">
+      <label>Image</label>
+      <input type="text" name="image" placeholder="Upload image here" ng-model="usersEdit.user.image" class="u-full-width">
+    </div>
+    <div class="twelve columns">
+      <label>First Name</label>
+      <input type="text" name="image" placeholder="update first name here" ng-model="usersEdit.user.first_name" class="u-full-width">
+    </div>
+    <div class="twelve columns">
+      <label>Last Name</label>
+      <input type="text" name="image" placeholder="update last name here" ng-model="usersEdit.user.last_name" class="u-full-width">
+    </div>
+    <div class="twelve columns">
+      <label>Bio</label>
+      <input type="text" name="image" placeholder="update your Bio here" ng-model="usersEdit.user.bio" class="u-full-width">
+    </div>
 
     <button>Update</button>
   </form>
-</section>
+</div>

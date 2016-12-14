@@ -15,29 +15,6 @@ UsersShowController.$inject = ['User', '$state', '$auth', 'Festival', '$http'];
 function UsersShowController(User, $state, $auth, Festival, $http) {
   const usersShow = this;
 
-  // const currentUserId = $auth.getPayload().id;
-  // console.log('currentUserId:', currentUserId);
-  // usersShow.Edit = false;
-
-  // wait until data has been returned from db to run function.
-  // User.get($state.params).$promise.then((data) => {
-  //   console.log(data);
-  //   usersShow.user = data;
-  //   allowUserToEdit();
-  // });
-
-  //prevent logged in user editing other users
-  // function allowUserToEdit() {
-    // console.log('user to edit:', usersShow.user.id);
-    // console.log('currentUser:', currentUserId);
-  //   if (usersShow.user.id === currentUserId) {
-  //     usersShow.Edit = true;
-  //     console.log('usersShow.user.id:',usersShow.user.id);
-  //   }
-  // }
-  //
-  // usersShow.allowUserToEdit = allowUserToEdit;
-
   function isCurrentUser() {
     return $auth.getPayload().id === parseFloat($state.params.id);
   }
@@ -56,6 +33,7 @@ function UsersShowController(User, $state, $auth, Festival, $http) {
   }
 
   usersShow.delete = deleteUser;
+
 
   function unfavorite(festival) {
     $http({
@@ -87,3 +65,28 @@ function UsersEditController(User, $state) {
   this.update = update;
 
 }
+
+
+
+// const currentUserId = $auth.getPayload().id;
+// console.log('currentUserId:', currentUserId);
+// usersShow.Edit = false;
+
+// wait until data has been returned from db to run function.
+// User.get($state.params).$promise.then((data) => {
+//   console.log(data);
+//   usersShow.user = data;
+//   allowUserToEdit();
+// });
+
+//prevent logged in user editing other users
+// function allowUserToEdit() {
+  // console.log('user to edit:', usersShow.user.id);
+  // console.log('currentUser:', currentUserId);
+//   if (usersShow.user.id === currentUserId) {
+//     usersShow.Edit = true;
+//     console.log('usersShow.user.id:',usersShow.user.id);
+//   }
+// }
+//
+// usersShow.allowUserToEdit = allowUserToEdit;

@@ -13,8 +13,8 @@ body{
 }
 
 img {
-  height: 300px;
-  width: 300px;
+  height: 200px;
+  width: 200px;
 }
 
 a {
@@ -57,10 +57,15 @@ li {
   color: #FF5A5F;
 }
 
-
 .home-recommend {
   text-align: center;
   display: inline;
+  width: 1000px;
+}
+
+.image-home {
+  height: 300px!important;
+  width: 300px!important;
 }
 
 // searchbar on homepage stuff
@@ -84,7 +89,47 @@ li {
 
 // profile page styling
 
-.profile-image {
+.profile-box {
   height:200px;
-  width: 200px;
+  width: 150px;
+  border: solid 2px black;
 }
+
+.profile-image {
+  height:150px;
+  width: 150px;
+}
+
+.profile-bio {
+  height:200px;
+  width: 400px;
+  border: solid 2px black;
+}
+.bio {
+  padding-bottom: 20px;
+}
+
+
+// festivals display page
+
+.festival-display-page {
+  display: inline-block;
+  margin-right:20px;
+  margin-bottom:20px;
+  border: solid 1px black;
+  // width: 300px;
+  // height: 300px;
+}
+
+.festival-display-results-bar {
+  background-color: #484848;
+  color: white;
+  text-align: center;
+  width: 100%;
+  height: inherit;
+}
+
+
+// .festival-display-list {
+//   display: inline-block;;
+// }

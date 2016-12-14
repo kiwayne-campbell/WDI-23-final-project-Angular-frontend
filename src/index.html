@@ -12,17 +12,20 @@
   <body ng-controller="MainController as main">
     <h1></h1>
         <nav class="navbar navbar-light bg-faded">
+          <a ui-sref="home" ui-sref-active="active">
           FESTIIVO
+        </a>
           <span class="navbar-text float-xs-right text-muted">
           <a ng-if="main.isLoggedIn()" ui-sref="usersShow({ id: main.userId })" ui-sref-active="active">Profile</a>
           <a ui-sref="home" ui-sref-active="active">Home</a>
           <a ui-sref="festivalsIndex" ui-sref-active="active">Festivals</a>
-          <a ui-sref="commentsIndex" ui-sref-active="active">Comments</a>
+          <!-- <a ui-sref="commentsIndex" ui-sref-active="active">Comments</a> -->
           <a ng-if="!main.isLoggedIn()" ui-sref="register" ui-sref-active="active">Register</a>
           <a ng-if="!main.isLoggedIn()" ui-sref="login" ui-sref-active="active">Login</a>
           <a ng-if="main.isLoggedIn()" href="#" ng-click="main.logout()">Logout</a>
         </span>
       </nav>
+      <hr>
     <main ui-view></main>
   </body>
 </html>

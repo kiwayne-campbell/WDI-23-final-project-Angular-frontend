@@ -20,7 +20,7 @@
       <ul>
         <li class="home-list" ng-repeat="festival in festivalsIndex.featured">
           <a ui-sref="festivalsShow({ id: festival.id })">
-            <img ng-src="{{ festival.image }}">
+            <img class="image-home" ng-src="{{ festival.image }}">
             <p>{{ festival.festival_name }}</p>
             <p>{{ festival.location }}</p>
           </a>
