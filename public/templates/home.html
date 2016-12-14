@@ -4,22 +4,48 @@
 <div class="col-md-10">
 
 <div class="home-title">
-  <h1><span class="home-festiivo">FESTIIVO</span> Welcome to the niche festivals site!</h1>
+  <h1><span class="home-festiivo">FESTIIVO</span> Welcome to the niche <br>
+    festivals site!</h1>
 </div>
 
 <!-- <div class="col-md-12 home-searchBar"> -->
-<div class="input-group">
-<form>
-  <input class="form-control" placeholder="Search" ng-model="q">
-  <span class="input-group-addon">
-  <button class=btn btn-large ui-sref="festivalsIndex({ q: q })">Search</button>
-  </span>
-</form>
-</div>
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="item active">
+          <img src="http://www.dimensionsfestival.com/wp-content/uploads/2016/01/boat.jpg" alt="First slide">
+        </div>
+      </div>
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+    </div>
+    <div class="search">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+              <div class="form-section">
+                <div class="row">
+                    <form role="form">
+                      <div class="col-md-10">
+                        <div class="form-group">
+                          <label class="sr-only" for="location">Location</label>
+                          <input type="email" class="form-control" id="location" placeholder="Where ?" ng-model="q">
+                        </div>
+                      </div>
+
+                      <div class="col-md-2">
+                        <button class=btn btn-large ui-sref="festivalsIndex({ q: q })">Search</button>
+                      </div>
+                    </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
 
 <div class="home-recommend">
-      <h2>Recommended festivals</h2>
-      <ul>
+      <h2 class="recommended-festivals">Recommended festivals</h2>
         <li class="home-list" ng-repeat="festival in festivalsIndex.featured">
           <a ui-sref="festivalsShow({ id: festival.id })">
             <img class="image-home" ng-src="{{ festival.image }}">
@@ -27,8 +53,18 @@
             <p>{{ festival.location }}</p>
           </a>
         </li>
-      </ul>
 </div>
+
+
 </div>
 
 <div class="col-md-1">&nbsp</div>
+
+      <!-- <div class="searchBar">
+      <form>
+        <input class="form-control" placeholder="Search by city, " ng-model="q">
+        <span class="input-group-addon">
+        <button class=btn btn-large ui-sref="festivalsIndex({ q: q })">Search</button>
+        </span>
+      </form>
+      </div> -->

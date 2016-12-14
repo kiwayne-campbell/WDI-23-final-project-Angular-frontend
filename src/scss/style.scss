@@ -49,10 +49,12 @@ button {
 
 .home-list{
   display: inline-block;
+  padding-right: 10px;
 }
 
 .home-title {
-  text-align: center;
+  // text-align: center;
+  font-size: 48px;
   margin-bottom: 50px;
 }
 
@@ -66,29 +68,58 @@ button {
   width: 1000px;
 }
 
+.recommended-festivals {
+  text-align: left;
+  margin-bottom: 20px;
+  margin-top: 270px;
+}
+
+.searchBar {
+  margin-bottom: 20px;
+}
+
 .image-home {
   height: 300px!important;
   width: 300px!important;
 }
 
-// searchbar on homepage stuff
+// searchbar on homepage styling
 
-// .stylish-input-group {
-//     margin-bottom: 50px;
-// }
-//
-// .stylish-input-group .input-group-addon{
-//     background: white !important;
-// }
-// .stylish-input-group .form-control{
-// 	border-right:0;
-// 	box-shadow:0 0 0;
-// 	border-color:#ccc;
-// }
-// .stylish-input-group button{
-//     border:0;
-//     background:transparent;
-// }
+.carousel {
+  height: 400px;
+  margin-bottom: 60px;
+}
+.carousel .item {
+  height: 500px;
+  background-color: #777;
+}
+
+.carousel-inner > .item > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: 500px;
+}
+
+.search {
+	margin-top: -25%;
+}
+.search .form-section{
+	background:rgba(0,0,0,0.6);
+	border: 2px solid #414141;
+	border-radius: 5px;
+	padding: 10px;
+}
+
+
+
+
+
+
+
+
+
 
 // profile page styling
 
