@@ -11,8 +11,8 @@ function FestivalsIndexController(Festival, $state, $scope) {
 
 }
 
-FestivalsShowController.$inject = ['Festival', '$state', 'Comment'];
-function FestivalsShowController(Festival, $state, Comment) {
+FestivalsShowController.$inject = ['Festival', '$state', 'Comment', 'User'];
+function FestivalsShowController(Festival, $state, Comment, User) {
   const festivalsShow = this;
 
   festivalsShow.festival = Festival.get($state.params);

@@ -44,6 +44,7 @@ li {
 
 button {
   background-color: #FF5A5F;
+  color: white;
 }
 // homepage styling
 
@@ -138,6 +139,21 @@ button {
   padding-bottom: 20px;
 }
 
+.user-profile-form-update {
+  margin-top: 100px;
+}
+
+.profile-display-results-bar {
+  background-color: #484848;
+  color: white;
+  text-align: center;
+  width: 100%;
+  height: 30px;
+  border-radius: 20px;
+  margin-top: 30px;
+
+}
+
 
 // festivals display page
 
@@ -193,4 +209,21 @@ button {
 .festivals-showpage-image {
   width: 100%!important;
   height: 400px;
+  margin-bottom: 20px;
+}
+
+.users-interested-festival-image {
+  width: 100px!important;
+  height: 100px!important;
+}
+
+.users-interested-list{
+  display: inline-block;
+}
+
+
+// festivsl edit page
+
+.festival-edit-form {
+  margin-top: 100px;
 }
