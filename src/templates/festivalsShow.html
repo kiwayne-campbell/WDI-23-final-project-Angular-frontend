@@ -15,7 +15,7 @@
   <h4>Minimum age: {{ festivalsShow.festival.minimum_age }}</h4>
 
   <h4>Info: {{ festivalsShow.festival.details }}</h4>
-
+<hr>
 <form ng-submit="festivalsShow.favorite()">
   <button class=btn btn-primary btn-large>Favourite this festival</button>
 </form>
@@ -42,7 +42,7 @@
   <input class="form-control input-xs" type="text" name="title" placeholder="Enter new title" ng-model="festivalsShow.comment.title" class="u-full-width">
 
   <input class="form-control input-xs" type="text" name="body" placeholder="Enter comment here" ng-model="festivalsShow.comment.body" class="u-full-width">
-
+  <hr>
   <button class=btn btn-lg>Post comment</button>
 </form>
 
@@ -66,6 +66,8 @@
 
 
 <br>
+<hr>
+<h4>Edit Festival Details</h4>
   <button class=btn btn-primary btn-large ng-if= "main.isLoggedIn()" ui-sref="festivalsEdit({ id: festivalsShow.festival.id })" class="button">Edit</button>
   <button class=btn btn-primary btn-large ng-if= "main.isLoggedIn()" ng-click="festivalsShow.delete()">Delete</button>
 </section>

@@ -14,7 +14,7 @@
     <!-- </div> -->
   </div>
 
-  <div class="col-md-7">
+  <div class="col-md-8">
     <div class="bio panel">
       <div class="profile-bio">
         <h4>Bio</h4>
@@ -32,9 +32,8 @@
         <li class="profile-favourites-list col-xs-4" ng-repeat="festival in usersShow.user.festivals">
           <a ui-sref="festivalsShow({ id: festival.id })">
             <div class="profile-festival-image" style="background-image:url('{{ festival.image}}')"></div>
-            <p>{{ festival.festival_name }}</p>
-            <p>{{ festival.location }}</p>
-          </a><br><br>
+            <p style="text-align:center;">{{ festival.festival_name }}</p>
+          </a><br>
           <button class=btn btn-primary btn-large ng-click="usersShow.unfavorite(festival)" ng-if= "usersShow.isCurrentUser()" && "usersShow.isLoggedIn()">Remove festival</button>
         </li>
       </ul>
@@ -55,6 +54,6 @@
 
   </div>
 
-  <div class="col-md-2">&nbsp</div>
+  <div class="col-md-1">&nbsp</div>
 
 </div>
