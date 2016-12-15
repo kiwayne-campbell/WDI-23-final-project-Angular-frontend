@@ -39,11 +39,11 @@
 <h4>Post a Comment here </h4>
 
 <form ng-submit="festivalsShow.add()">
-  <input type="text" name="title" placeholder="Enter new title" ng-model="festivalsShow.comment.title" class="u-full-width">
+  <input class="form-control input-xs" type="text" name="title" placeholder="Enter new title" ng-model="festivalsShow.comment.title" class="u-full-width">
 
-  <input type="text" name="body" placeholder="Enter comment here" ng-model="festivalsShow.comment.body" class="u-full-width">
+  <input class="form-control input-xs" type="text" name="body" placeholder="Enter comment here" ng-model="festivalsShow.comment.body" class="u-full-width">
 
-  <button class=btn btn-primary btn-large>Post comment</button>
+  <button class=btn btn-lg>Post comment</button>
 </form>
 
 <hr>
@@ -55,7 +55,7 @@
 </ul>
   <li ng-repeat="comment in festivalsShow.festival.comments">
     <h5>{{ comment.title }}</h5>
-    <h5>{{ comment.created_at }}</h5>
+    <h5>{{ comment.created_at | date : 'longDate' }}</h5>
     <p>{{ comment.body }}</p>
     <p><strong>{{ comment.user.username }}</strong></p>
     <hr>
@@ -76,7 +76,7 @@
 <div class="col-md-5">
 
 <!-- <div class="map-position"> -->
-  <h4>Event Location</h4>
+  <h4 style="text-align:center;">Event Location</h4>
   <hr>
   <google-map center="{lat: festivalsShow.festival.latitude, lng: festivalsShow.festival.longitude }" ng-if="festivalsShow.festival.latitude"></google-map>
 </div>

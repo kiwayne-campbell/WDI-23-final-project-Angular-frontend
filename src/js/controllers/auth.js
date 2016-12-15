@@ -30,7 +30,7 @@ function LoginController($auth, $state) {
         // const currentUserId = $auth.getPayload().id;
         // console.log(currentUserId);
         // localStorage.setItem('currentUserId', currentUserId);
-        $state.go('usersIndex');
+        $state.go('festivalsIndex');
       });
   }
 

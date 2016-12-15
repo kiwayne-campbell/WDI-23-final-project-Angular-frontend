@@ -54,8 +54,8 @@ gulp.task('scripts', () => {
     .pipe(concat('app.js'))
     .pipe(uglify())
     .pipe(sourcemaps.write('./'))
-    .pipe(gulp.dest('public/js'))
-    .pipe(livereload());
+    .pipe(gulp.dest('public/js'));
+    // .pipe(livereload());
 });
 
 // styles
@@ -84,8 +84,15 @@ gulp.task('styles:vendor', () => {
 // html
 gulp.task('html', () => {
   return gulp.src('src/**/*.html')
-    .pipe(gulp.dest('public'))
-    .pipe(livereload());
+    .pipe(gulp.dest('public'));
+    // .pipe(livereload());
+});
+
+// images
+gulp.task('images', () => {
+  return gulp.src('src/images/*')
+    .pipe(gulp.dest('public/images'));
+    // .pipe(livereload());
 });
 
 // nodemon
@@ -100,10 +107,11 @@ gulp.task('nodemon', () => {
 
 // watch
 gulp.task('watch', () => {
-  livereload.listen();
+  // livereload.listen();
   gulp.watch('src/**/*.html', ['html']);
   gulp.watch('src/**/*.js', ['scripts']);
+  gulp.watch('src/images/*', ['images']);
   gulp.watch('src/**/*.scss', ['styles', 'styles:vendor']);
 });
 
-gulp.task('default', sequence('clean', ['bower:js', 'bower:css'], ['scripts', 'styles', 'styles:vendor', 'html'], 'watch', 'nodemon'));
+gulp.task('default', sequence('clean', ['bower:js', 'bower:css'], ['scripts', 'styles', 'styles:vendor', 'html', 'images'], 'watch', 'nodemon'));

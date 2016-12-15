@@ -6,8 +6,10 @@
         <img class="profile-image" ng-src="{{ usersShow.user.image }}" height="200px" width="200px" style="border-radius:100px; border:solid 1px black;">
         <p style="text-align:center;">{{ usersShow.user.username }}</p>
         <p style="text-align:center;">{{ usersShow.user.email }}</p>
-        <button class=btn btn-large ng-if= "usersShow.isCurrentUser()" && "usersShow.isLoggedIn()"  ui-sref="usersEdit({ id: usersShow.user.id })">Edit</button>
-        <button class=btn btn-large ng-if= "usersShow.isCurrentUser()" && "usersShow.isLoggedIn()"  ng-click="usersShow.delete()">Delete</button>
+        <div class="buttons">
+          <button class=btn btn-large ng-if= "usersShow.isCurrentUser()" && "usersShow.isLoggedIn()"  ui-sref="usersEdit({ id: usersShow.user.id })">Edit</button>
+          <button class=btn btn-large ng-if= "usersShow.isCurrentUser()" && "usersShow.isLoggedIn()"  ng-click="usersShow.delete()">Delete</button>
+        </div>
       </div>
     <!-- </div> -->
   </div>
@@ -24,22 +26,22 @@
   <hr>
     <div class="panel space-4">
 
-      <h4>Your Favourite Events</h4>
+      <h4>Favourite Events</h4>
       <hr>
-      <ul style="margin:0; padding:0">
-        <li class="profile-favourites-list" ng-repeat="festival in usersShow.user.festivals">
+      <ul style="margin:0; padding:0" class="row">
+        <li class="profile-favourites-list col-xs-4" ng-repeat="festival in usersShow.user.festivals">
           <a ui-sref="festivalsShow({ id: festival.id })">
-            <img ng-src ="{{ festival.image}}">
+            <div class="profile-festival-image" style="background-image:url('{{ festival.image}}')"></div>
             <p>{{ festival.festival_name }}</p>
             <p>{{ festival.location }}</p>
           </a><br><br>
-          <button class=btn btn-primary btn-large ng-click="usersShow.unfavorite(festival)">Remove festival</button>
+          <button class=btn btn-primary btn-large ng-click="usersShow.unfavorite(festival)" ng-if= "usersShow.isCurrentUser()" && "usersShow.isLoggedIn()">Remove festival</button>
         </li>
       </ul>
     </div>
     <hr>
     <div class="panel space-4">
-      <h4>Your Comments on festivals</h4>
+      <h4>Comments on festivals</h4>
       <hr>
       <ul style="margin:0; padding:0">
         <li ng-repeat="comment in usersShow.user.comments">

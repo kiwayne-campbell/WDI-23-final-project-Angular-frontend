@@ -9,7 +9,6 @@ function MainController($auth, $state, $rootScope) {
 
   main.isLoggedIn = $auth.isAuthenticated;
   // main.userId = $auth.getPayload().id;
-  main.userId = $auth.getPayload().id;
   console.log(main.userId);
 
   function logout() {
@@ -28,10 +27,15 @@ function MainController($auth, $state, $rootScope) {
 
   function secureState(e, toState) {
     main.message = null;
+    main.stateName = toState.name;
     if(!$auth.isAuthenticated() && protectedStates.includes(toState.name)) {
       e.preventDefault();
       $state.go('login');
       main.message = 'You must be logged in to go there!';
+    }
+
+    if($auth.isAuthenticated()) {
+      main.currentUserId = $auth.getPayload().id;
     }
   }
 
