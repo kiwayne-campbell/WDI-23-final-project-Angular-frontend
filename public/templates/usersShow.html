@@ -1,23 +1,22 @@
 <div class="row">
 
   <div class="col-md-3">
-    <div class="panel space-4">
+    <!-- <div style:"margin-top:80px;"> -->
       <div class="profile-box">
-        <img class="profile-image" ng-src="{{ usersShow.user.image }}" height="100px" width="100px">
-      </div>
-      <div class="panel-body">
-        <h4>Username: {{ usersShow.user.username }}</h4>
-        <h4>Email: {{ usersShow.user.email }}</h4>
+        <img class="profile-image" ng-src="{{ usersShow.user.image }}" height="200px" width="200px" style="border-radius:100px; border:solid 1px black;">
+        <p style="text-align:center;">{{ usersShow.user.username }}</p>
+        <p style="text-align:center;">{{ usersShow.user.email }}</p>
         <button class=btn btn-large ng-if= "usersShow.isCurrentUser()" && "usersShow.isLoggedIn()"  ui-sref="usersEdit({ id: usersShow.user.id })">Edit</button>
-        <button class=btn btn-large ng-if= "usersShow.isCurrentUser()" && "usersShow.isLoggedIn()"   ng-click="usersShow.delete()">Delete</button>
+        <button class=btn btn-large ng-if= "usersShow.isCurrentUser()" && "usersShow.isLoggedIn()"  ng-click="usersShow.delete()">Delete</button>
       </div>
-    </div>
+    <!-- </div> -->
   </div>
 
-  <div class="col-md-9">
-    <div class="bio panel space-4">
-      <h4>Bio</h4>
+  <div class="col-md-7">
+    <div class="bio panel">
       <div class="profile-bio">
+        <h4>Bio</h4>
+        <hr>
       <p>{{ usersShow.user.bio }}</p><br>
     </div>
     <button class=btn btn-large ng-if= "usersShow.isCurrentUser()" && "usersShow.isLoggedIn()"  ui-sref="usersEdit({ id: usersShow.user.id })">Edit</button>
@@ -26,22 +25,23 @@
     <div class="panel space-4">
 
       <h4>Your Favourite Events</h4>
-      <ul>
-        <li ng-repeat="festival in usersShow.user.festivals">
+      <hr>
+      <ul style="margin:0; padding:0">
+        <li class="profile-favourites-list" ng-repeat="festival in usersShow.user.festivals">
           <a ui-sref="festivalsShow({ id: festival.id })">
             <img ng-src ="{{ festival.image}}">
             <p>{{ festival.festival_name }}</p>
             <p>{{ festival.location }}</p>
-            <p>{{ festival.cost }}</p>
           </a><br><br>
-          <button class=btn btn-primary btn-large ng-click="usersShow.unfavorite(festival)">Remove this festival from  favorites!</button>
+          <button class=btn btn-primary btn-large ng-click="usersShow.unfavorite(festival)">Remove festival</button>
         </li>
       </ul>
     </div>
     <hr>
     <div class="panel space-4">
       <h4>Your Comments on festivals</h4>
-      <ul>
+      <hr>
+      <ul style="margin:0; padding:0">
         <li ng-repeat="comment in usersShow.user.comments">
           <p> {{ comment.festival_ids.festival_name }}
           <p>Title: {{ comment.title }}</p>
@@ -52,5 +52,7 @@
     </div>
 
   </div>
+
+  <div class="col-md-2">&nbsp</div>
 
 </div>

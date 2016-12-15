@@ -3,18 +3,18 @@
     <img class="festivals-showpage-image" ng-src= "{{ festivalsShow.festival.image }}">
 </div>
 
-<div class="col-md-8">
+<div class="col-md-7">
   <div class="no-span">
     <h1 style="text-align: center;">{{ festivalsShow.festival.festival_name }}</h1>
   </div>
-  
-  <h4>{{ festivalsShow.festival.location }}</h4>
+
+  <h4>Location: {{ festivalsShow.festival.location }}</h4>
   <h4>Start: {{ festivalsShow.festival.start }}</h4>
   <h4>Finish: {{ festivalsShow.festival.finish }}</h4>
-  <h4>£{{ festivalsShow.festival.cost }}</h4>
-  <h4>{{ festivalsShow.festival.minimum_age }}</h4>
+  <h4>cost: £{{ festivalsShow.festival.cost }}</h4>
+  <h4>Minimum age: {{ festivalsShow.festival.minimum_age }}</h4>
 
-  <h4>{{ festivalsShow.festival.details }}</h4>
+  <h4>Info: {{ festivalsShow.festival.details }}</h4>
 
 <form ng-submit="festivalsShow.favorite()">
   <button class=btn btn-primary btn-large>Favourite this festival</button>
@@ -69,9 +69,15 @@
   <button class=btn btn-primary btn-large ng-if= "main.isLoggedIn()" ui-sref="festivalsEdit({ id: festivalsShow.festival.id })" class="button">Edit</button>
   <button class=btn btn-primary btn-large ng-if= "main.isLoggedIn()" ng-click="festivalsShow.delete()">Delete</button>
 </section>
-
-    <google-map center="{lat: festivalsShow.festival.latitude, lng: festivalsShow.festival.longitude }" ng-if="festivalsShow.festival.latitude"></google-map>
+<hr>
 
 </div>
 
-<div class="col-md-2">&nbsp</div>
+<div class="col-md-5">
+
+<!-- <div class="map-position"> -->
+  <h4>Event Location</h4>
+  <hr>
+  <google-map center="{lat: festivalsShow.festival.latitude, lng: festivalsShow.festival.longitude }" ng-if="festivalsShow.festival.latitude"></google-map>
+</div>
+<!-- </div> -->
