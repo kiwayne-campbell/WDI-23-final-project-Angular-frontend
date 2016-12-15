@@ -33,7 +33,7 @@ function FestivalsShowController(Festival, $state, Comment, User) {
 
   function favorite() {
     festivalsShow.festival.$favorite(() => {
-      $state.go('festivalsIndex');
+      $state.reload();
     });
   }
   // add main-message- added to favourites!

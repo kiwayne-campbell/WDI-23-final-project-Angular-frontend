@@ -52,6 +52,25 @@
       </ul>
     </div>
 
+    <h4>You Can search for festivals from your Profile </h4>
+
+    <div style="margin-top:30px;" class="form-section">
+      <div class="row">
+          <form role="form">
+            <div class="col-md-10">
+              <div class="form-group">
+                <label class="sr-only" for="location">Location</label>
+                <input type="text" class="form-control" id="location" placeholder="Go find your festival!" ng-model="q">
+              </div>
+            </div>
+
+            <div class="col-md-2">
+              <button class=btn btn-large ui-sref="festivalsIndex({ q: q })">Search</button>
+            </div>
+          </form>
+      </div>
+    </div>
+
   </div>
 
   <div class="col-md-1">&nbsp</div>
