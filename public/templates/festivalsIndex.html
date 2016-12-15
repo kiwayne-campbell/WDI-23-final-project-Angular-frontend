@@ -32,11 +32,11 @@
           <li class="" ng-repeat="festival in festivalsIndex.all | filter:searchBox">
             <a ui-sref="festivalsShow({ id: festival.id })">
               <div class="row">
-                <div class="festival-display-page panel space-4 col-xs-4">
+                <div class="festival-display-page col-xs-5">
                   <img ng-src="{{ festival.image }}">
                 </div>
 
-                <div class="festival-display-page list panel space-4 col-xs-8">
+                <div class="festival-display-page list panel space-4 col-xs-7">
                   <h2>{{ festival.festival_name }}</h2>
                   <p style="font-size:20px;"><strong>Location:</strong> {{ festival.location }}</p>
                   <p><strong>start:</strong> {{ festival.start }}</p>
