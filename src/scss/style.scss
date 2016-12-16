@@ -158,11 +158,6 @@ button {
 
 }
 
-// .profile-image {
-//   height:150px;
-//   width: 150px;
-//   border-radius: 20px;
-// }
 
 .profile-bio {
 margin-top: 80px;
@@ -191,15 +186,15 @@ margin-top: 80px;
   padding-right: 10px;
 }
 
-.profile-festival-image {
-  background-size: cover;
-  background-position: center;
-  &:after {
-    content: "";
-    display: block;
-    padding-bottom: 100%;
-  }
-}
+// .profile-festival-image {
+//   background-size: cover;
+//   background-position: center;
+//   &:after {
+//     content: "";
+//     display: block;
+//     padding-bottom: 100%;
+//   }
+// }
 
 
 // festivals display page

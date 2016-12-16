@@ -3,7 +3,7 @@
   <div class="col-md-3">
     <!-- <div style:"margin-top:80px;"> -->
       <div class="profile-box">
-        <img class="profile-image" ng-src="{{ usersShow.user.image }}" height="200px" width="200px" style="border-radius:100px; border:solid 1px black;">
+        <img ng-src="{{ usersShow.user.image }}" height="200px" width="200px" style="border-radius:100px; border:solid 1px black;">
         <p style="text-align:center;">{{ usersShow.user.username }}</p>
         <p style="text-align:center;">{{ usersShow.user.email }}</p>
         <div class="buttons">
@@ -31,9 +31,10 @@
       <ul style="margin:0; padding:0" class="row">
         <li class="profile-favourites-list col-xs-4" ng-repeat="festival in usersShow.user.festivals">
           <a ui-sref="festivalsShow({ id: festival.id })">
-            <div class="profile-festival-image" style="background-image:url('{{ festival.image}}')"></div>
+            <!-- <div class="profile-festival-image" style="background-image:url('{{ festival.image}}')"></div> -->
+            <img ng-src="{{ festival.image}}" alt="">
             <p style="text-align:center;">{{ festival.festival_name }}</p>
-          </a><br>
+          </a>
           <button class=btn btn-primary btn-large ng-click="usersShow.unfavorite(festival)" ng-if= "usersShow.isCurrentUser()" && "usersShow.isLoggedIn()">Remove festival</button>
         </li>
       </ul>
