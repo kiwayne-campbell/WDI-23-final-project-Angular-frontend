@@ -13,8 +13,8 @@
   <body ng-controller="MainController as main">
         <nav class="navbar navbar-light bg-faded navbar-fixed-top">
           <a class="home-festiivo" ui-sref="home" ui-sref-active="active">
-          <strong>FESTIIVO</strong>
-        </a>
+            <strong style="font-size:25px">FESTIIVO</strong>
+          </a>
           <span class="navbar-text float-xs-right text-muted">
           <a ng-if="main.isLoggedIn()" ui-sref="usersShow({ id: main.currentUserId })" ui-sref-active="active">Profile</a>
           <a ui-sref="festivalsIndex" ui-sref-active="active">Festivals</a>
