@@ -38,7 +38,9 @@ function UsersShowController(User, $state, $auth, Festival, $http) {
   function unfavorite(festival) {
     $http({
       method: 'POST',
-      url: `http://localhost:3000/api/festivals/${festival.id}/unfavorite`
+      // Local Version
+      // url: `http://localhost:3000/api/festivals/${festival.id}/unfavorite`
+      url: `https://final-project-backend-api.herokuapp.com/api/festivals/${festival.id}/unfavorite`
     }).then(function(){
       usersShow.user.festivals.splice(usersShow.user.festivals.indexOf(festival), 1);
     });
