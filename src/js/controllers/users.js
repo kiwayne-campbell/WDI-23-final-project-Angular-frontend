@@ -11,8 +11,8 @@ function UsersIndexController(User) {
   usersIndex.all = User.query();
 }
 
-UsersShowController.$inject = ['User', '$state', '$auth', 'Festival', '$http'];
-function UsersShowController(User, $state, $auth, Festival, $http) {
+UsersShowController.$inject = ['User', '$state', '$auth', 'Festival', 'API_URL'];
+function UsersShowController(User, $state, $auth, Festival, API_URL) {
   const usersShow = this;
 
   function isCurrentUser() {
@@ -25,6 +25,8 @@ function UsersShowController(User, $state, $auth, Festival, $http) {
 
   usersShow.user = User.get($state.params);
 
+  console.log(usersShow.user);
+
 
   function deleteUser() {
     usersShow.user.$remove(() => {
@@ -36,12 +38,7 @@ function UsersShowController(User, $state, $auth, Festival, $http) {
 
 
   function unfavorite(festival) {
-    $http({
-      method: 'POST',
-      // Local Version
-      // url: `http://localhost:3000/api/festivals/${festival.id}/unfavorite`
-      url: `https://final-project-backend-api.herokuapp.com/api/festivals/${festival.id}/unfavorite`
-    }).then(function(){
+    Festival.unfavorite({ id: festival.id }, () => {
       usersShow.user.festivals.splice(usersShow.user.festivals.indexOf(festival), 1);
     });
   }
