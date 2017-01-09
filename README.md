@@ -30,7 +30,7 @@ Some of the cool things I enjoyed figuring out was a search function that didn't
 It used a combination of using the param field of a search bar and inputting 
 
 You can find this on my backend section here:
-
+https://github.com/kiwayne-campbell/WDI-23-final-project-API-backend/blob/master/app/controllers/festivals_controller.rb
 
 The only problem with this is it is limited.
 
