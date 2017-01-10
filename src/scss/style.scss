@@ -14,12 +14,6 @@ body{
   height: 800px;
 }
 
-// .map-position  {
-//     width: 100%;
-//     // height: 100%;
-//     position: fixed;
-// }
-
 
 img {
   max-width: 100%;
@@ -31,10 +25,18 @@ a {
   color: grey;
 }
 
+// need to understand why a:focus from bootstrap is overding hover home-recommend
+
 a:hover {
   text-decoration: none;
-  color: grey;
+  color: #FF5A5F;
 }
+
+a:focus {
+  text-decoration: none;
+  color: #FF5A5F;
+}
+
 
 .navbar {
   background-color: white;
@@ -55,6 +57,8 @@ button {
   background-color: #FF5A5F;
   color: white;
 }
+
+
 // homepage styling
 
 .home-list{
@@ -206,10 +210,7 @@ margin-top: 80px;
   p {
     line-height: 1.1;
   }
-  // line-height: 3px;
-  // border: solid 1px black;
-  // width: 200px;
-  // height: 200px;
+
 }
 
 .festival-display-results-bar {
@@ -228,17 +229,6 @@ margin-top: 80px;
   background-image: url("https://www.nabaleka.com/wp-content/uploads/2015/09/Nabaleka-Web-Design.png");
   // margin-bottom: 20px;
 }
-
-// .festival-display-page-video-two{
-//   width: 300px;
-//   height: 250px;
-//   position: fixed;
-//   background-image: url("http://missouribusinessalert.com/wp-content/uploads/2012/05/ad300.gif");
-// }
-
-// .container-Index{
-//   position: absolute;
-// }
 
 
 .no-span {
@@ -281,8 +271,3 @@ margin-top: 80px;
 .festival-edit-form {
   margin-top: 100px;
 }
-
-
-
-
-// Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
